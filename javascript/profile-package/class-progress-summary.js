@@ -45,7 +45,7 @@ var ProgressSummaryView = function() {
         fInitialized = true;
 
         // Register partials and helpers
-        Handlebars.registerPartial("class-progress-column", Templates.get("profile.class-progress-column"));
+        Handlebars.registerPartial("profile_class-progress-column", Templates.get("profile.class-progress-column"));
 
         Handlebars.registerHelper("toPixelWidth", function(num) {
             return toPixelWidth(num);

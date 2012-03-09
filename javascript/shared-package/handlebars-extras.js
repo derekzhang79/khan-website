@@ -33,7 +33,7 @@ Handlebars.registerHelper("reverseEach", function(context, block) {
     return result;
 });
 
-Handlebars.registerPartial("streak-bar", Templates.get("shared.streak-bar"));
+Handlebars.registerPartial("shared_streak-bar", Templates.get("shared.streak-bar"));
 
 /**
  * Return a bingo redirect url
