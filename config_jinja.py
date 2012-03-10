@@ -26,6 +26,7 @@ import gae_mini_profiler.templatetags
 import api.auth.xsrf
 import util
 from app import App
+import handlebars
 
 jinja2.default_config = {
     "template_path": os.path.join(os.path.dirname(__file__), "templates"),
@@ -46,6 +47,7 @@ jinja2.default_config = {
         "UserData": UserData,
         "json": json,
         "App": App,
+        "handlebars_template": handlebars.render_from_jinja,
     }, 
     "filters": {
         "urlencode": lambda s: quote_plus(s or ""),
