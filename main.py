@@ -456,7 +456,7 @@ class ChangeEmail(bulk_update.handler.UpdateKind):
         setattr(entity, prop, users.User(new_email))
         return True
 
-class SearchNew(request_handler.RequestHandler):
+class Search(request_handler.RequestHandler):
     @user_util.open_access
     def get(self):
         query = self.request.get('page_search_query')
@@ -547,7 +547,7 @@ class SearchNew(request_handler.RequestHandler):
 
         self.render_jinja2_template("searchresults_new.html", template_values)
 
-class Search(request_handler.RequestHandler):
+class SearchOld(request_handler.RequestHandler):
 
     @user_util.admin_only
     def update(self):
@@ -821,8 +821,8 @@ application = webapp2.WSGIApplication([
     ('/video', ViewVideoDeprecated), # Backwards URL compatibility
     ('/(.*)/v/([^/]*)', ViewVideo),
     ('/reportissue', ReportIssue),
+    ('/search_old', SearchOld),
     ('/search', Search),
-    ('/search_new', SearchNew),
     ('/savemapcoords', knowledgemap.handlers.SaveMapCoords),
     ('/crash', Crash),
 
